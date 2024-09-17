@@ -1,6 +1,6 @@
 package com.aluracursos.biblioteca.modelos;
 
-public class Libro {
+public class Libro implements Comparable<Libro>{
   private String titulo;
   private String autor;
   private int anoDePublicacion;
@@ -28,6 +28,11 @@ public class Libro {
     return "\n* Título: "+this.getTitulo() + " | "+
             "Autor: "+this.getAutor() + " | "+
             "Año de publicación: "+this.getAnoDePublicacion();
+  }
+
+  @Override
+  public int compareTo(Libro otroLibro) {
+    return this.getTitulo().compareTo(otroLibro.getTitulo());
   }
 
 

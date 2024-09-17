@@ -1,6 +1,7 @@
 package com.aluracursos.biblioteca.modelos;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Biblioteca {
@@ -29,9 +30,11 @@ public class Biblioteca {
   }
 
   public void mostrarLibro(){
+
     if (libros.isEmpty()) {
       System.out.println("No hay libros en la biblioteca.");
     }else {
+      libros.sort(Comparator.comparing(Libro::getTitulo));
       System.out.println("\nLista de libros:");
       for (Libro libro : libros) {
         System.out.print(libro);
